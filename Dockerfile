@@ -13,7 +13,7 @@ RUN apt-get update \
 	pkg-config \
 	python-pycryptodome \
 	python-scapy \
-	sysfsutils 
-	
+	sysfsutils \
+	&& rm -rf /var/lib/apt/lists/*
 RUN chmod +x krack.py
-ENTRYPOINT ["krack"]
+ENTRYPOINT ["/src/poc-krack/krack.py"]
